@@ -29,12 +29,15 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
+# define uma lista de domínios e endereços IP que o servidor Django
+# reconhece como válidos para servir a aplicação. Isso impede que a
+# aplicação seja acessada por domínios não autorizados
+ALLOWED_HOSTS = [  # dominio que vai ter acesso a sua aplicaçao
     "127.0.0.1",
     "localhost",
     "tasklistjp.netlify.app",
     "task-list-back-3h78.onrender.com",
-]  # dominio que vai ter acesso a sua aplicaçao
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -62,10 +65,12 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+# você controla quais origens podem fazer requisições para a sua AP
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://frontend.local",
     "https://tasklistjp.netlify.app",
+    "https://task-list-back-3h78.onrender.com",
 ]
 
 REST_FRAMEWORK = {
