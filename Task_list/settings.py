@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "tasklistjp.netlify.app",
+    "task-list-back-3h78.onrender.com",
 ]  # dominio que vai ter acesso a sua aplicaçao
 # Application definition
 
