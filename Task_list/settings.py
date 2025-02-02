@@ -29,7 +29,11 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]  # dominio que vai ter acesso a sua aplicaçao
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "tasklistjp.netlify.app",
+]  # dominio que vai ter acesso a sua aplicaçao
 # Application definition
 
 INSTALLED_APPS = [
@@ -60,6 +64,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://frontend.local",
+    "https://tasklistjp.netlify.app",
 ]
 
 REST_FRAMEWORK = {
@@ -177,3 +182,9 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SAMESITE = "Lax"
+# Habilitar CORS_ALLOW_CREDENTIALS se usar autenticação JWT/sessão:
+CORS_ALLOW_CREDENTIALS = True
+# Habilitar CSRF_TRUSTED_ORIGINS para evitar problemas com requisições POST do frontend:
+CSRF_TRUSTED_ORIGINS = [
+    "https://tasklistjp.netlify.app",
+]
