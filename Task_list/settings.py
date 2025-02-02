@@ -33,10 +33,10 @@ DEBUG = False
 # reconhece como válidos para servir a aplicação. Isso impede que a
 # aplicação seja acessada por domínios não autorizados
 ALLOWED_HOSTS = [  # dominio que vai ter acesso a sua aplicaçao
-    "127.0.0.1",
+    "task-list-back-3h78.onrender.com",  # back-end
+    "tasklistjp.netlify.app",  # front-end
+    "127.0.0.1",  # local
     "localhost",
-    "tasklistjp.netlify.app",
-    "task-list-back-3h78.onrender.com",
 ]
 # Application definition
 
@@ -67,10 +67,10 @@ MIDDLEWARE = [
 ]
 # você controla quais origens podem fazer requisições para a sua AP
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "https://task-list-back-3h78.onrender.com",  # back-end
+    "https://tasklistjp.netlify.app",  # front-end
+    "http://localhost:5173",  # local
     "http://frontend.local",
-    "https://tasklistjp.netlify.app",
-    "https://task-list-back-3h78.onrender.com",
 ]
 
 REST_FRAMEWORK = {
