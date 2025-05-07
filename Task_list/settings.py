@@ -124,6 +124,9 @@ DATABASES = {
         "PASSWORD": config("DB_PASSWORD"),
         "PORT": config("DB_PORT"),
         "HOST": config("DB_HOST"),
+        "OPTIONS": {
+            "sslmode": "require",  # Isso força o uso de SSL
+        },
     }
 }
 # Password validation
