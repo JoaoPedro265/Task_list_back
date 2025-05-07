@@ -191,5 +191,6 @@ CSRF_COOKIE_SAMESITE = "Lax"
 CORS_ALLOW_CREDENTIALS = True
 # Habilitar CSRF_TRUSTED_ORIGINS para evitar problemas com requisições POST do frontend:
 CSRF_TRUSTED_ORIGINS = [
-    "https://tasklistjp.netlify.app",
+    "https://tasklistjp.netlify.app",#front
+    "https://task-list-back-3h78.onrender.com",  # back-end
 ]
