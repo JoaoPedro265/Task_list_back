@@ -124,6 +124,9 @@ DATABASES = {
         "PASSWORD": config("DB_PASSWORD"),
         "PORT": config("DB_PORT"),
         "HOST": config("DB_HOST"),
+        "OPTIONS": {
+            "sslmode": "require",  # Isso força o uso de SSL
+        },
     }
 }
 # Password validation
@@ -191,5 +194,8 @@ CSRF_COOKIE_SAMESITE = "Lax"
 CORS_ALLOW_CREDENTIALS = True
 # Habilitar CSRF_TRUSTED_ORIGINS para evitar problemas com requisições POST do frontend:
 CSRF_TRUSTED_ORIGINS = [
-    "https://tasklistjp.netlify.app",
+    "https://tasklistjp.netlify.app",  # front
+    "https://task-list-back-3h78.onrender.com",  # back-end
+    "http://127.0.0.1:8000",
+    "http://localhost:8000",
 ]
