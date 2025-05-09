@@ -192,6 +192,7 @@ CSRF_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SAMESITE = "Lax"
 # Habilitar CORS_ALLOW_CREDENTIALS se usar autenticação JWT/sessão:
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 # Habilitar CSRF_TRUSTED_ORIGINS para evitar problemas com requisições POST do frontend:
 CSRF_TRUSTED_ORIGINS = [
     "https://tasklistjp.netlify.app",  # front
