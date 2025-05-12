@@ -1,5 +1,12 @@
 # Esse código coloca sua aplicação Django no ar com um servidor de verdade,
 # mais seguro e estável que o runserver, ideal para deploy em produção.(obs usado para testes antes do Deploy)
+
+
+# venv: .\venv\Scripts\Activate.ps1
+# pip freeze > requirements.txt
+# Waitress: python run_waitress.py
+# default:python manage.py runserver
+
 from waitress import serve
 from Task_list.wsgi import application
 
