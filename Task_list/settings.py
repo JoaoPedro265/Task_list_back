@@ -32,7 +32,7 @@ DEBUG = True
 # reconhece como válidos para servir a aplicação. Isso impede que a
 # aplicação seja acessada por domínios não autorizados
 ALLOWED_HOSTS = [  # dominio que vai ter acesso a sua aplicaçao
-    "task-list-back-od42.onrender.com",  # back-end
+    "task-list-back-hr8k.onrender.com",  # back-end
     "tasklistjp.netlify.app",  # front-end
     "127.0.0.1",  # local
     "localhost",
@@ -66,7 +66,7 @@ MIDDLEWARE = [
 ]
 # você controla quais origens podem fazer requisições para a sua AP
 CORS_ALLOWED_ORIGINS = [
-    "https://task-list-back-od42.onrender.com",  # back-end
+    "https://task-list-back-hr8k.onrender.com",  # back-end
     "https://tasklistjp.netlify.app",  # front-end
     "http://localhost:5173",  # local
     "http://frontend.local",
@@ -193,7 +193,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 # Habilitar CSRF_TRUSTED_ORIGINS para evitar problemas com requisições POST do frontend:
 CSRF_TRUSTED_ORIGINS = [
     "https://tasklistjp.netlify.app",  # front
-    "https://task-list-back-od42.onrender.com",  # back-end
+    "https://task-list-back-hr8k.onrender.com",  # back-end
     "http://127.0.0.1:8000",
     "http://localhost:8000",
 ]
