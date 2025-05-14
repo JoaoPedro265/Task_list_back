@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 from decouple import config
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -116,15 +117,20 @@ WSGI_APPLICATION = "Task_list.wsgi.application"
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": config("DB_NAME"),
+#         "USER": config("DB_USER"),
+#         "PASSWORD": config("DB_PASSWORD"),
+#         "PORT": config("DB_PORT"),
+#         "HOST": config("DB_HOST"),
+#     }
+# }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": config("DB_NAME"),
-        "USER": config("DB_USER"),
-        "PASSWORD": config("DB_PASSWORD"),
-        "PORT": config("DB_PORT"),
-        "HOST": config("DB_HOST"),
-    }
+    "default": dj_database_url.parse(
+        "postgresql://admin:n6WHalpI91PlRPBKkdlm9xyoFFeBupiS@dpg-d0ifmlje5dus73dsb600-a.oregon-postgres.render.com/deploy_task_tx6s",
+    )
 }
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
