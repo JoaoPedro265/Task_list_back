@@ -28,16 +28,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG", cast=bool)  # tem que especificar o tipo de dado
+
 # define uma lista de domínios e endereços IP que o servidor Django
 # reconhece como válidos para servir a aplicação. Isso impede que a
 # aplicação seja acessada por domínios não autorizados
-ALLOWED_HOSTS = [  # dominio que vai ter acesso a sua aplicaçao
-    "task-list-back-hr8k.onrender.com",  # back-end
-    "tasklistjp.netlify.app",  # front-end
-    "127.0.0.1",  # local
-    "localhost",
-]
+
+# dominio que vai ter acesso a sua aplicaçao
+ALLOWED_HOSTS = config("ALLOWED_HOSTS").split(
+    ","
+)  # permite adicionar varios dominios no .env
 # Application definition
 
 INSTALLED_APPS = [
@@ -127,11 +127,7 @@ WSGI_APPLICATION = "Task_list.wsgi.application"
 #         "HOST": config("DB_HOST"),
 #     }
 # }
-DATABASES = {
-    "default": dj_database_url.parse(
-        "postgresql://admin:n6WHalpI91PlRPBKkdlm9xyoFFeBupiS@dpg-d0ifmlje5dus73dsb600-a.oregon-postgres.render.com/deploy_task_tx6s",
-    )
-}
+DATABASES = {"default": dj_database_url.parse(config("URL_RENDER_DATABASE"))}
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 

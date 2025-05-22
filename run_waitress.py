@@ -11,5 +11,7 @@ from waitress import serve
 from Task_list.wsgi import application
 
 serve(
-    application, host="0.0.0.0", port=10000
+    application,
+    host="0.0.0.0",
+    port=10000,
 )  # obs com o render usa 10000, no local usa 8000
